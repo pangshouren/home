@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="9ebd1ac1-296c-424b-af29-82dca64e9baa" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -142,12 +141,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1519284665795</updated>
-      <workItem from="1519284667076" duration="228000" />
+      <workItem from="1519284667076" duration="306000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="228000" />
+    <option name="totallyTimeSpent" value="306000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1427" y="-174" width="1280" height="704" extended-state="0" />
@@ -175,6 +174,9 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
