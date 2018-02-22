@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"/>
+    <title>想和你拍全家福</title>
+    <link rel="stylesheet" type="text/css" href="css/reset.css"/>
+    <link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/magic.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/animate.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+    <script src="js/jquery-3.1.1.min.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+    <script type="text/javascript">
+        function initScale() {
+            var iWidth = document.documentElement.getBoundingClientRect().width;
+            iWidth = iWidth > 750 ? 750 : iWidth;
+            document.getElementsByTagName("html")[0].style.fontSize = iWidth / 7.5 + "px";
+        }
+
+        window.onresize = function () {
+            initScale();
+        }
+        initScale();
+    </script>
+    <style type="text/css">
+        .animate-music {
+            animation: rotate 2s linear infinite;
+        }
+
+        .music img {
+            width: 100%;
+            height: 100%;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+
+        .s-xguide-down{
+            z-index: 1000;
+            width:25px;
+            height:25px;
+            display:inline-block;
+            position:fixed;
+            bottom: 0.3rem;
+            left:50%;
+            margin-left: -12.5px;
+            background:url("./images/xia1.png") no-repeat -10px -1px;
+            _background:none;
+            _filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src="./images/xia1.png",enabled=true,sizingMethod="crop");
+            border-radius:50%;
+            -moz-border-radius:50%;
+            -webkit-border-radius:50%;
+            -o-border-radius:50%;
+            opacity:.7;
+            cursor:pointer;
+
+        }
+        @keyframes xguide_down{
+            0%,100%{
+                transform:scale(0.0);
+                -moz-transform:scale(0.0);
+                -o-transform:scale(0.0);
+                -webkit-transform:scale(0.0);
+                -ms-transform:scale(0.0);
+                opacity:0
+            }
+            50%{
+                transform:scale(1.0);
+                -moz-transform:scale(1.0);
+                -o-transform:scale(1.0);
+                -webkit-transform:scale(1.0);
+                -ms-transform:scale(1.0);
+                opacity:1
+            }
+
+        }
+        @-webkit-keyframes xguide_down{
+            0%,100%{
+                -webkit-transform:scale(0.0);
+                -moz-transform:scale(0.0);
+                -o-transform:scale(0.0);
+                -ms-transform:scale(0.0);
+                transform:scale(0.0);
+                opacity:0
+            }
+            50%{
+                -webkit-transform:scale(1.0);
+                -moz-transform:scale(1.0);
+                -o-transform:scale(1.0);
+                -ms-transform:scale(1.0);
+                transform:scale(1.0);
+                opacity:1
+            }
+
+        }
+        @-moz-keyframes xguide_down{
+            0%,100%{
+                -moz-transform:scale(0.0);
+                -o-transform:scale(0.0);
+                -webkit-transform:scale(0.0);
+                -ms-transform:scale(0.0);
+                transform:scale(0.0);
+                opacity:0
+            }
+            50%{
+                -moz-transform:scale(1.0);
+                -o-transform:scale(1.0);
+                -webkit-transform:scale(1.0);
+                -ms-transform:scale(1.0);
+                transform:scale(1.0);
+                opacity:1
+            }
+
+        }
+        @-o-keyframes xguide_down{
+            0%,100%{
+                -o-transform:scale(0.0);
+                -moz-transform:scale(0.0);
+                -webkit-transform:scale(0.0);
+                -ms-transform:scale(0.0);
+                transform:scale(0.0);
+                opacity:0
+            }
+            50%{
+                -o-transform:scale(1.0);
+                -moz-transform:scale(1.0);
+                -webkit-transform:scale(1.0);
+                -ms-transform:scale(1.0);
+                transform:scale(1.0);
+                opacity:1
+            }
+
+        }
+        .s-xguide-down.trans{
+            -webkit-animation:xguide_down 4.0s infinite ease-in-out;
+            -moz-animation:xguide_down 4.0s infinite ease-in-out;
+            -o-animation:xguide_down 4.0s infinite ease-in-out;
+            animation:xguide_down 4.0s infinite ease-in-out
+        }
+        .s-xguide-down.arrow-1{
+            animation-delay:-2.0s;
+            -webkit-animation-delay:-2.0s;
+            -moz-animation-delay:-2.0s;
+            -o-animation-delay:-2.0s
+        }
+        .swiper-pagination-bullet-active{background: #fff;}
+    </style>
+</head>
+<body>
+
+
+<a id="up" class="s-xguide-down trans" href="javascript:;" onclick="return false;" hidefocus=""></a>
+
+<audio src="music.mp3" autoplay="autoplay" loop="loop" id="J_audio_bg"></audio>
+<div class="music animate-music" style="width: 40px;height: 40px;position: fixed;top: 10px;right: 10px;z-index: 9999;">
+    <img src="images/audio_icon.png"/></div>
+<!--<img id="up" src="images/up.png"-->
+<!--style="position: fixed;left: 50%;z-index: 10;width: 23px;height: 23px;margin-left: -11px;"/>-->
+<!-- Swiper -->
+<div class="swiper-container  swiper-container-v">
+    <div class="swiper-wrapper">
+        <div class="swiper-slide" style="position: relative;">
+            <div style="width: 100%;height: 100%;position: absolute;background: url(images/1.jpg) no-repeat center center/cover;"></div>
+            <img src="images/logo.jpg" style="position: absolute;top:10px;width:1.84rem;height:auto;left:0.3rem;"/>
+            <!--<img src="images/1.jpg" style="width: 100%;height: 100%;position: absolute;top: 0;left: 0;"/>-->
+            <div class="slide1" style="width: 100%;height: 100%;position: relative;">
+            </div>
+        </div>
+        <div class="swiper-slide" style="position: relative;">
+            <div style="width: 100%;height: 100%;position: absolute;background: url(images/2.jpg) no-repeat center center/cover;"></div>
+            <!--<img src="images/2.jpg" style="width: 100%;height: 100%;position: absolute;top: 0;left: 0;"/>-->
+            <div class="slide2" style="width: 100%;height: 100%;position: relative;"></div>
+        </div>
+        <div class="swiper-slide" style="position: relative;">
+            <div style="width: 100%;height: 100%;position: absolute;background: url(images/3.jpg) no-repeat center center/cover;"></div>
+            <!--<img src="images/3.jpg" style="width: 100%;height: 100%;position: absolute;top: 0;left: 0;"/>-->
+            <div class="slide3" style="width: 100%;height: 100%;position: relative;"></div>
+        </div>
+        <div class="swiper-slide" style="position: relative;">
+            <div style="width: 100%;height: 100%;position: absolute;background: url(images/4.jpg) no-repeat center center/cover;"></div>
+            <!--<img src="images/4.jpg" style="width: 100%;height: 100%;position: absolute;top: 0;left: 0;"/>-->
+            <div class="slide4" style="width: 100%;height: 100%;position: relative;"></div>
+        </div>
+        <div class="swiper-slide" style="position: relative;">
+            <div style="width: 100%;height: 100%;position: absolute;background: url(images/5.jpg) no-repeat center center/cover;"></div>
+            <!--<img src="images/5.jpg" style="width: 100%;height: 100%;position: absolute;top: 0;left: 0;"/>-->
+            <div class="slide5" style="width: 100%;height: 100%;position: relative;"></div>
+        </div>
+        <div class="swiper-slide" style="position: relative;">
+            <div style="width: 100%;height: 100%;position: absolute;background: url(images/6.jpg) no-repeat center center/cover;"></div>
+            <!--<img src="images/6.jpg" style="width: 100%;height: 100%;position: absolute;top: 0;left: 0;"/>-->
+            <div class="slide6" style="width: 100%;height: 100%;position: relative;"></div>
+        </div>
+        <div class="swiper-slide" style="position: relative;">
+            <div style="width: 100%;height: 100%;position: absolute;background: url(images/7.jpg) no-repeat center center/cover;"></div>
+            <!--<img src="images/7.jpg" style="width: 100%;height: 100%;position: absolute;top: 0;left: 0;"/>-->
+            <div class="slide7" style="width: 100%;height: 100%;position: relative;"></div>
+        </div>
+        <div class="swiper-slide" style="position: relative;">
+            <div style="width: 100%;height: 100%;position: absolute;background: url(images/8.jpg) no-repeat center center/cover;"></div>
+            <!--<img src="images/8.jpg" style="width: 100%;height: 100%;position: absolute;top: 0;left: 0;"/>-->
+            <div class="slide8" style="width: 100%;height: 100%;position: relative;"></div>
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var audio = document.getElementById('J_audio_bg');
+    var disappearCls = document.getElementById('J_linkUp_audio');
+    document.addEventListener("WeixinJSBridgeReady", function () {
+        audio.play();
+        disappearCls.play();
+    }, false);
+    document.addEventListener('YixinJSBridgeReady', function () {
+        audio.play();
+        disappearCls.play();
+    }, false);
+    var btnMusic = document.getElementsByClassName("music")[0];
+    btnMusic.onclick = function () {
+        if ($(this).hasClass('animate-music')) {
+            $(this).removeClass('animate-music');
+            $(this).find("img").attr("src", "images/audio_icon_no.png")
+            audio.pause();
+        } else {
+            $(this).addClass('animate-music');
+            $(this).find("img").attr("src", "images/audio_icon.png")
+            audio.play();
+        }
+    }
+</script>
+<!-- Swiper JS -->
+<!-- Initialize Swiper -->
+<script src="js/swiperContent.js" type="text/javascript" charset="utf-8"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+<script src="php/signPackage.php"></script>
+<script type="text/javascript">
+    var $link = window.location.href;
+    var zfarray = new Array("想和你拍全家福")
+    var shareLink = $link;
+    var shareImg = 'http://mobile.k1d.com.cn/young/newyear/images/p1-1.JPG';
+    var shareTitle = '想和你拍全家福';
+    var shareDesc = '我们在一起，就是最大的幸运，从2018狗年启航，想让全家一旺无前';
+    updateweixinstr('', '')
+
+    function updateweixinstr(tit, str) {
+        if (tit != "") {
+            shareTitle = tit;
+        }
+        if (str != "") {
+            shareDesc = str;
+        }
+        wx.config({
+            debug: false,
+            appId: signPackage.appId,
+            timestamp: parseInt(signPackage.timestamp),
+            nonceStr: signPackage.nonceStr,
+            signature: signPackage.signature,
+            jsApiList: [
+                'checkJsApi',
+                'onMenuShareTimeline',
+                'onMenuShareAppMessage',
+                'onMenuShareQQ',
+                'onMenuShareWeibo'
+            ]
+        });
+        wx.ready(function () {
+            document.getElementById('J_audio_bg').play();
+            wx.checkJsApi({
+                jsApiList: [
+                    'getNetworkType',
+                    'onMenuShareTimeline',
+                    'onMenuShareAppMessage',
+                    'onMenuShareQQ',
+                    'onMenuShareWeibo'
+                ],
+                success: function (res) {
+                    checkResult = eval('(' + JSON.stringify(res) + ')');
+                    checkResult = checkResult.checkResult;
+                    if (checkResult.getNetworkType) {
+                        getNetworkType();
+                    }
+                    if (checkResult.onMenuShareTimeline) {
+                        onMenuShareTimeline();
+                    }
+                    if (checkResult.onMenuShareAppMessage) {
+                        onMenuShareAppMessage();
+                    }
+                    if (checkResult.onMenuShareQQ) {
+                        onMenuShareQQ();
+                    }
+                    if (checkResult.onMenuShareWeibo) {
+                        onMenuShareWeibo();
+                    }
+                }
+            });
+        });
+        wx.error(function (res) {
+            alert(res.errMsg);
+        });
+
+        function getNetworkType() {
+            wx.getNetworkType({
+                success: function (res) {
+                },
+                fail: function (res) {
+                }
+            });
+        }
+
+        function onMenuShareAppMessage() {
+            wx.onMenuShareAppMessage({
+                title: shareTitle,
+                desc: shareDesc,
+                link: shareLink,
+                imgUrl: shareImg,
+                trigger: function (res) {
+                },
+                success: function (res) {
+                },
+                cancel: function (res) {
+                },
+                fail: function (res) {
+                }
+            });
+        }
+
+        function onMenuShareTimeline() {
+            wx.onMenuShareTimeline({
+                title: shareDesc,
+                link: shareLink,
+                imgUrl: shareImg,
+                trigger: function (res) {
+                },
+                success: function (res) {
+                },
+                cancel: function (res) {
+                },
+                fail: function (res) {
+                }
+            });
+        }
+
+        function onMenuShareQQ() {
+            wx.onMenuShareQQ({
+                title: shareTitle,
+                desc: shareDesc,
+                link: shareLink,
+                imgUrl: shareImg,
+                trigger: function (res) {
+                },
+                complete: function (res) {
+                },
+                success: function (res) {
+                },
+                cancel: function (res) {
+                },
+                fail: function (res) {
+                }
+            });
+        }
+
+        function onMenuShareWeibo() {
+            wx.onMenuShareWeibo({
+                title: shareTitle,
+                desc: shareDesc,
+                link: shareLink,
+                imgUrl: shareImg,
+                trigger: function (res) {
+                },
+                complete: function (res) {
+                },
+                success: function (res) {
+                },
+                cancel: function (res) {
+                },
+                fail: function (res) {
+                }
+            });
+        }
+    }
+</script>
+</body>
+</html>
