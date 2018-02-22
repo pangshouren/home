@@ -251,6 +251,18 @@
     var shareDesc = '回家过年，幸福在一起！用一张团圆全家福，开启你我的旺旺狗年！';
     updateweixinstr('', '')
 
+    //随机数
+    function GetRandomNum(Min,Max)
+    {
+        var Range = Max - Min;
+        var Rand = Math.random();
+        return(Min + Math.round(Rand * Range));
+    }
+    var num = GetRandomNum(1,2);
+    var gaNum=num-1;
+
+    var arr=["364天的奋斗，只为换来这一刻的微笑","旺旺狗年全家福，过年就等这一刻"];
+
     function updateweixinstr(tit, str) {
         if (tit != "") {
             shareTitle = tit;
@@ -316,10 +328,11 @@
             });
         }
 
+        //分享给朋友（个人）
         function onMenuShareAppMessage() {
             wx.onMenuShareAppMessage({
                 title: shareTitle,
-                desc: shareDesc+"111",
+                desc: shareDesc,
                 link: shareLink,
                 imgUrl: shareImg,
                 trigger: function (res) {
@@ -333,9 +346,10 @@
             });
         }
 
+        //分享给朋友圈
         function onMenuShareTimeline() {
             wx.onMenuShareTimeline({
-                title: shareDesc+"222",
+                title: arr[gaNum],
                 link: shareLink,
                 imgUrl: shareImg,
                 trigger: function (res) {
@@ -352,7 +366,7 @@
         function onMenuShareQQ() {
             wx.onMenuShareQQ({
                 title: shareTitle,
-                desc: shareDesc+"333",
+                desc: shareDesc,
                 link: shareLink,
                 imgUrl: shareImg,
                 trigger: function (res) {
@@ -371,7 +385,7 @@
         function onMenuShareWeibo() {
             wx.onMenuShareWeibo({
                 title: shareTitle,
-                desc: shareDesc+"444",
+                desc: shareDesc,
                 link: shareLink,
                 imgUrl: shareImg,
                 trigger: function (res) {
