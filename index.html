@@ -319,7 +319,7 @@
         function onMenuShareAppMessage() {
             wx.onMenuShareAppMessage({
                 title: shareTitle,
-                desc: shareDesc,
+                desc: shareDesc+"111",
                 link: shareLink,
                 imgUrl: shareImg,
                 trigger: function (res) {
@@ -335,7 +335,7 @@
 
         function onMenuShareTimeline() {
             wx.onMenuShareTimeline({
-                title: shareDesc,
+                title: shareDesc+"222",
                 link: shareLink,
                 imgUrl: shareImg,
                 trigger: function (res) {
@@ -352,7 +352,7 @@
         function onMenuShareQQ() {
             wx.onMenuShareQQ({
                 title: shareTitle,
-                desc: shareDesc,
+                desc: shareDesc+"333",
                 link: shareLink,
                 imgUrl: shareImg,
                 trigger: function (res) {
@@ -371,7 +371,7 @@
         function onMenuShareWeibo() {
             wx.onMenuShareWeibo({
                 title: shareTitle,
-                desc: shareDesc,
+                desc: shareDesc+"444",
                 link: shareLink,
                 imgUrl: shareImg,
                 trigger: function (res) {
